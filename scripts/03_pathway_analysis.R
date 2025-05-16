@@ -1,0 +1,12 @@
+
+library(clusterProfiler)
+library(org.Hs.eg.db)
+deg_data <- read.csv("results/DE_genes.csv", row.names=1)
+sig_genes <- rownames(deg_data[deg_data$padj < 0.05 & !is.na(deg_data$padj), ])
+entrez_ids <- mapIds(org.Hs.eg.db, keys=sig_genes, column="ENTREZID", keytype="SYMBOL", multiVals="first")
+entrez_ids <- na.omit(entrez_ids)
+kk <- enrichKEGG(gene=entrez_ids, organism="hsa")
+write.csv(as.data.frame(kk), file="results/enriched_pathways.csv")
+png("results/enriched_pathways.png")
+dotplot(kk, showCategory=10)
+dev.off()

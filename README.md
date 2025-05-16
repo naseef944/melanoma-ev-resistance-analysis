@@ -1,1 +1,11 @@
-# melanoma-ev-resistance-analysis
+# Melanoma Drug Resistance Project
+
+This project simulates RNA-seq data to study gene expression changes in melanoma cells treated with a drug. It uses R packages DESeq2 and clusterProfiler for differential expression and pathway enrichment analysis.
+
+## Structure
+- `data/`: Simulated gene counts and metadata
+- `scripts/`: R scripts for each analysis step
+- `results/`: Outputs including plots and DE tables
+
+## Launch on Binder (RStudio)
+Paste this repo URL into https://mybinder.org and choose the RStudio interface.

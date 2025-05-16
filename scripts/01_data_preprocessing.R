@@ -1,0 +1,10 @@
+
+library(DESeq2)
+dir.create("results", showWarnings = FALSE)
+control <- read.csv("data/simulated_counts_control_realgenes.csv", row.names = 1)
+treated <- read.csv("data/simulated_counts_treated_realgenes.csv", row.names = 1)
+metadata <- read.csv("data/metadata.csv")
+counts <- cbind(control, treated)
+colData <- data.frame(row.names=colnames(counts), condition=metadata$Condition)
+dds <- DESeqDataSetFromMatrix(countData=counts, colData=colData, design=~condition)
+saveRDS(dds, file="results/dds_raw.rds")
