@@ -1,3 +1,4 @@
+install.packages("readr")
 install.packages("BiocManager", repos = "https://cran.r-project.org")
 BiocManager::install(c(
   "DESeq2", "clusterProfiler", "org.Hs.eg.db",
