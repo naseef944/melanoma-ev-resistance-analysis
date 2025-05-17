@@ -1,6 +1,6 @@
-# Melanoma Drug Resistance Project
+# Gene Expression Analysis: Control vs. Treated
 
-This project simulates RNA-seq data to study gene expression changes in melanoma cells treated with a drug. It uses R packages DESeq2 and clusterProfiler for differential expression and pathway enrichment analysis.
+This project simulates RNA-seq data to study gene expression changes in cells treated with a drug. It uses R packages DESeq2 and clusterProfiler for differential expression and pathway enrichment analysis.
 
 ## Structure
 - `data/`: Simulated gene counts and metadata
